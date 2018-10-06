@@ -114,7 +114,7 @@ if __name__ == '__main__':
         return  result
 
 
-    train_data = pd.read_csv('/data/train.csv')
+    train_data = pd.read_csv('./data/train.csv')
     train_features = np.zeros([len(train_data), 7])
     train_labels = np.zeros(len(train_data))
     for i in range(len(train_data)):
@@ -147,8 +147,8 @@ if __name__ == '__main__':
 
     tree = make_tree(train_features, train_labels, leaf_labels_num=30, accepted_gini=0.4)
 
-    test_data = pd.read_csv('/data/test.csv')
-    test_label_data = pd.read_csv('/data/gender_submission.csv')
+    test_data = pd.read_csv('./data/test.csv')
+    test_label_data = pd.read_csv('./data/gender_submission.csv')
     test_features = np.zeros([len(test_data), 7])
     test_labels = np.zeros(len(test_data))
     for i in range(len(test_data)):

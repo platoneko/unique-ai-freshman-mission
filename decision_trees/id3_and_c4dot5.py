@@ -427,7 +427,7 @@ def get_figures(x, y, tree):
 
 if __name__ == '__main__':
     train_x, train_y = [], []
-    with open('/data/traindata.txt') as f:
+    with open('./data/traindata.txt') as f:
         for line in f.readlines()[1:]:
             split_line = line.strip().split(' ')
             train_x.append(split_line[:-1])
@@ -438,7 +438,7 @@ if __name__ == '__main__':
     tree = make_post_pruning_tree(train_x[:1100], train_y[:1100], train_x[1100:], train_y[1100:])
 
     test_x = []
-    with open('/data/testdata.txt') as f:
+    with open('./data/testdata.txt') as f:
         for line in f.readlines()[1:]:
             split_line = line.strip().split(' ')
             test_x.append(split_line)

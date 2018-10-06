@@ -58,7 +58,7 @@ class SparseSoftmaxCrossEntropy:
 
 def bp_test():
     CLASS_DICT = {'very_low': 0, 'Low': 1, 'Middle': 2, 'High': 3, 'Very Low': 0}
-    train_data = pd.read_excel('data5.xls', sheetname='Training_Data')
+    train_data = pd.read_excel('./data/data5.xls', sheetname='Training_Data')
 
     labels = np.array(train_data.iloc[:, -1].map(CLASS_DICT)).astype(np.int)
     data = np.delete(np.array(train_data), -1, 1).astype(np.float)
@@ -107,7 +107,7 @@ def bp_test():
 
     print('validating acc: ', valid_acc)
 
-    test_data = pd.read_excel('/data/data5.xls', sheetname='Test_Data')
+    test_data = pd.read_excel('./data/data5.xls', sheetname='Test_Data')
 
     test_y = np.array(test_data.iloc[:, -1].map(CLASS_DICT)).astype(np.int)
     test_X = np.delete(np.array(test_data), -1, 1).astype(np.float)

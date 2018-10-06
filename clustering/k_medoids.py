@@ -148,7 +148,7 @@ def load_dataset():
                   'sales': 7,
                   'support': 8,
                   'technical': 9}
-    f = pd.read_csv('/data/hr-analytics.csv')
+    f = pd.read_csv('./data/hr-analytics.csv')
     m = len(f)
     dataset = np.zeros((m, 9))
 
