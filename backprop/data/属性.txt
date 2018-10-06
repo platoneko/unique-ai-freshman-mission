@@ -1,0 +1,26 @@
+Attribute Information:
+属性
+
+STG 
+对目标对象的学习时间
+(The degree of study time for goal object materails)
+
+SCG 
+重复次数
+(The degree of repetition number of user for goal object materails)
+
+STR
+与目标对象相关的对象的学习时间
+(The degree of study time of user for related objects with goal object)
+
+LPR
+与目标对象有关的对象的用户的考试成绩
+(The exam performance of user for related objects with goal object)
+
+PEG
+用户的目标对象的考试成绩
+(The exam performance of user for goal objects)
+
+
+
+UNS 用户的知识水平 (The knowledge level of user)
