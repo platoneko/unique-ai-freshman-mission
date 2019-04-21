@@ -8,13 +8,10 @@ from math import *
 
 class FC:
     def __init__(self, W, b, lr, regu_rate):
-        self.W = W.copy()
-        self.b = b.copy()
         self.lr = lr
         self.regu_rate = regu_rate
 
     def forward(self, X):
-        self.X = X.copy()
         return self.X.dot(self.W) + self.b
 
     def backprop(self, back_grad):
@@ -30,19 +27,15 @@ class FC:
 
 class Relu:
     def forward(self, X):
-        self.X = X.copy()
         return np.maximum(X, 0)
 
     def backprop(self, back_grad):
-        grad = back_grad.copy()
         grad[self.X < 0] = 0
         return grad
 
 
 class SparseSoftmaxCrossEntropy:
     def forward(self, X, y):
-        self.X = X.copy()
-        self.y = y.copy()
         denom = np.sum(np.exp(self.X), axis=1).reshape([-1, 1])
         self.softmax = np.exp(X) / denom
         cross_entropy = np.mean(-np.log(self.softmax[range(self.X.shape[0]), self.y]))
@@ -71,8 +64,8 @@ def bp_test():
 
     W1 = np.random.randn(5, 64) / sqrt(5)
     b1 = np.zeros(64)
-    W2 = np.random.randn(64, 32) / sqrt(64)
-    b2 = np.zeros(32)
+    W2 = np.random.randn(64, 4) / sqrt(64)
+    b2 = np.zeros(4)
     lr = 0.05
     regu_rate = 0.001
     max_iter = 30000
